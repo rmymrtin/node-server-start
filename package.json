@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node ./",
-    "dev": "babel-node ./"
+    "dev": "nodemon --exec babel-node ./"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,9 @@
     "colors": "^1.4.0",
     "express": "^4.17.1",
     "helmet": "^3.21.3",
-    "morgan": "^1.9.1"
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "yargs": "^15.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
