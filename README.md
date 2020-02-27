@@ -40,7 +40,7 @@ yarn add
 
 ## Usage
 
-Développement
+Mode Développement
 ```bash
 npm run dev
 ```
