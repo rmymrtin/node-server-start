@@ -6,6 +6,7 @@ import fs from 'fs';
 import cluster from 'cluster';
 import colors from 'colors';
 import morgan  from 'morgan';
+import Routes from '../routes/routes';
 
 export default class Server {
 
@@ -49,6 +50,8 @@ export default class Server {
                 }
             }
         });
+
+        app.use(new Routes);
 
         app.use(function (req, res, next) {
             const send = {
@@ -102,9 +105,12 @@ export default class Server {
     };
 
     start() {
+
+        // Si le mode cluster est activé
         if(this.cluster && cluster.isMaster) {
             this.clusterMode();
-        } else {
+        } // Sinon on lance le serveur normalement 
+         else {
             this.expressServer(this.port)
         }
     }
