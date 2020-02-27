@@ -1,0 +1,35 @@
+{
+  "name": "node-server-start",
+  "version": "0.0.1",
+  "description": "Serveur NodeJS pour commencer la création de vos API REST directement",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node ./",
+    "dev": "babel-node ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arwantys/node-server-start.git"
+  },
+  "author": "Arwantys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arwantys/node-server-start/issues"
+  },
+  "homepage": "https://github.com/arwantys/node-server-start#readme",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
