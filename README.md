@@ -61,7 +61,15 @@ Assurez-vous que votre configuration utilise bien MySQL
 myproject/config/index.js => database = "mysql"
 ```
 
-Utilisez la variable global **db** pour créer vos requêtes, celle-ci est disponible sans importation.
+Utilisez la variable global **db** pour créer vos requêtes, celle-ci est disponible sans importation. Exemple:
+```javascript
+db.query('SELECT * FROM users WHERE id = 1', function(err, results, fields) {
+        
+        if (err) throw err;
+        console.log(results[0].username);
+        
+    });
+```
 
 ## License
 
