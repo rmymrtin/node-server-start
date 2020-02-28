@@ -1,4 +1,5 @@
 import mysql from 'mysql';
+import mongoose from 'mongoose';
 
 export default class DB {
 
@@ -22,6 +23,21 @@ export default class DB {
               });
 
               return connection;
+        } else {
+            mongoose.connect('mongodb://'+process.env.MongoDB_HOST+':27017/'+process.env.MongoDB_DATABASE, {
+              user: process.env.MongoDB_USER,
+              pass: process.env.MongoDB_PASSWORD,
+              useNewUrlParser: true,
+              useUnifiedTopology: true
+            }, function(err) {
+              if(err) throw err;
+              console.log('Base de données connecté')
+            });
+
+            mongoose.set('useCreateIndex', true);
+            mongoose.set('useFindAndModify', false);
+
+            return mongoose.connection;
         }
 
     }
