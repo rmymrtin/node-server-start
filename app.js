@@ -1,5 +1,6 @@
 import config from './config';
 import Server from './server/server';
+require('dotenv').config()
 
 global.__config = config; // On met à disposition la configuration dans toute l'application
 

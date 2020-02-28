@@ -3,13 +3,13 @@ import jwt from 'jsonwebtoken';
 export default class ServiceJWT {
 
     createToken(data) {
-        const token = jwt.sign({data}, __config.jwt_token);
+        const token = jwt.sign({data}, process.env.JWT_TOKEN);
 
         return token;
     }
 
     decodeToken(token) {
-        var decoded = jwt.verify(token, __config.jwt_token);
+        var decoded = jwt.verify(token, process.env.JWT_TOKEN);
 
         return decoded;
     }
@@ -17,7 +17,7 @@ export default class ServiceJWT {
     verifyToken(token) {
         try {
 
-            var verify = jwt.verify(token, __config.jwt_token);
+            var verify = jwt.verify(token, process.env.JWT_TOKEN);
 
             return verify;
 
