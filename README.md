@@ -99,15 +99,15 @@ var UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', UserSchema);
 
-const session = {
+const user_data = {
     username: "Arwantys"
 }
 
-User.create(session, (err, session) => {
+User.create(user_data, (err, u) => {
 
     if (err) throw err;
         
-    if (session != null) {
+    if (u != null) {
         return res.json({ response: 'User ajouté', status: 'success'});
     } else {
         return res.json({ response: 'Oups, un problème est survenue', status: 'error' });
