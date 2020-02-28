@@ -23,7 +23,7 @@ export default class DB {
               });
 
               return connection;
-        } else {
+        } else  if(__config.database === 'mongodb') {
             mongoose.connect('mongodb://'+process.env.MongoDB_HOST+':27017/'+process.env.MongoDB_DATABASE, {
               user: process.env.MongoDB_USER,
               pass: process.env.MongoDB_PASSWORD,

@@ -8,6 +8,7 @@ module.exports = (req, res, next) => {
     res.json({
         index: 'test working',
         token: create_token,
-        decod_token: decod_token
+        decod_token: decod_token,
+        req: req.token_data
     })
 }

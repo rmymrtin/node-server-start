@@ -3,13 +3,13 @@ import jwt from 'jsonwebtoken';
 export default class ServiceJWT {
 
     createToken(data) {
-        const token = jwt.sign({data}, process.env.JWT_TOKEN);
+        const token = jwt.sign({ data }, process.env.JWT_SECRET);
 
         return token;
     }
 
     decodeToken(token) {
-        var decoded = jwt.verify(token, process.env.JWT_TOKEN);
+        var decoded = jwt.verify(token, process.env.JWT_SECRET);
 
         return decoded;
     }
@@ -17,15 +17,31 @@ export default class ServiceJWT {
     verifyToken(token) {
         try {
 
-            var verify = jwt.verify(token, process.env.JWT_TOKEN);
+            var verify = jwt.verify(token, process.env.JWT_SECRET);
 
             return verify;
 
-          } catch(err) {
+        } catch (err) {
 
             return false;
 
-          }
+        }
+    }
+
+    verifyTokenPromise(token) {
+        return new Promise((resolve, reject) => {
+
+            jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
+
+                if (err || !decodedToken) {
+                    return reject(err)
+                }
+
+                resolve(decodedToken)
+
+            })
+            
+        })
     }
 
 }

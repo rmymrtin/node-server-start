@@ -3,7 +3,7 @@ const config = {
     app_port: 3000, // Port d'écoute de l'application,
     cluster_mode: false, // true pour activer le mode cluster
     production: false, // false signifie que vous êtes entrain de développer votre application, true pour passer en mode production
-    database: 'mysql' // mysql ou mongodb
+    database: '' // mysql, mongodb ou vide
 }
 
 export default config;
