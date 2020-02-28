@@ -10,5 +10,4 @@ module.exports = (req, res, next) => {
         token: create_token,
         decod_token: decod_token
     })
-
 }

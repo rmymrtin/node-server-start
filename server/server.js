@@ -7,6 +7,7 @@ import cluster from 'cluster';
 import colors from 'colors';
 import morgan  from 'morgan';
 import Routes from '../routes/routes';
+import DB from '../db/index';
 
 export default class Server {
 
@@ -39,6 +40,9 @@ export default class Server {
 
             next();
         });
+
+        const db = new DB().connect();
+        global.db = db;
 
         var server = http.createServer(app).listen(port, '0.0.0.0', () => {
 

@@ -45,6 +45,23 @@ Mode Développement
 npm run dev
 ```
 
+## Usage avec MySQL
+
+Il faut d'abord configurer la variable d'environnement.
+Exemple: 
+```bash
+MySQL_HOST=localhost
+MySQL_USER=root
+MySQL_PASSWORD=
+MySQL_DATABASE=node
+```
+
+Assurez-vous que votre configuration utilise bien MySQL
+```bash
+myproject/config/index.js => database = "mysql"
+```
+
+Utilisez la variable global **db** pour créer vos requêtes, celle-ci est disponible sans importation.
 
 ## License
 
