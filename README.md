@@ -65,10 +65,10 @@ Utilisez la variable global **db** pour créer vos requêtes, celle-ci est dispo
 ```javascript
 db.query('SELECT * FROM users WHERE id = 1', function(err, results, fields) {
         
-        if (err) throw err;
-        console.log(results[0].username);
+    if (err) throw err;
+    console.log(results[0].username);
         
-    });
+});
 ```
 
 ## License
