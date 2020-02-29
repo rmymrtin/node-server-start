@@ -5,7 +5,9 @@
 
 Commencez le développement d'API REST avec NodeJS facilement
 
-  
+ - Utilisation de ExpressJS pour gérer les routes
+ - Support de MySQL et MongoDB
+ - Support de JWT
 
 ## Installation
 
