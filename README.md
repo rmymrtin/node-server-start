@@ -116,6 +116,59 @@ User.create(user_data, (err, u) => {
 })
 ```
 
+## Protection des routes avec JWT
+
+Le projet intègre déjà les fonctionnalités de base de JWT.
+
+ - Création de token
+ - Vérification
+ - Protection des routes 
+
+Pour utiliser ceux pour la création et la vérification importez le module situé dans **myproject/services/jwt.js**. 
+Exemple :
+```bash
+import ServiceJWT from  '../../../services/jwt';
+```
+
+Utilisation: 
+Créer un token
+```javascript
+new ServiceJWT().createToken({exemple: 'data'});
+```
+
+Vérifier un token
+```javascript
+var check_token = new ServiceJWT().verifyToken(token);
+if(check_token) {
+    // Token valide
+} else {
+    // Token invalid
+}
+```
+
+Pour protéger une route avec JWT, importez le module **myproject/middleware/jwt.js** dans le **Controller** souhaitez, exemple **myproject/routes/controllers/testController.js**
+Pour envoyer le **Token**, utilisez le **Header** **Authorization** (req.headers.authorization)
+Exemple : 
+
+```javascript
+import { Router } from 'express';
+var router = Router();
+
+// Middleware
+import { verifyJWT_MW } from '../../middleware/jwt';
+
+// Middlewares Routes
+import testMiddlewareIndex from '../middleware/testMiddleware/index';
+
+// Routes 
+router.get('/', verifyJWT_MW, testMiddlewareIndex); // Utilise la protection JWT
+router.get('/', testMiddlewareIndex); // Sans la protection JWT
+
+// Fin des routes
+
+module.exports = router;
+```
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
