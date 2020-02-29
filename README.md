@@ -126,7 +126,7 @@ Le projet intègre déjà les fonctionnalités de base de JWT.
 
 Pour utiliser ceux pour la création et la vérification importez le module situé dans **myproject/services/jwt.js**. 
 Exemple :
-```bash
+```javascript
 import ServiceJWT from  '../../../services/jwt';
 ```
 
