@@ -47,7 +47,7 @@ npm run dev
 
 ## Usage avec MySQL
 
-Il faut d'abord configurer la variable d'environnement.
+Il faut d'abord configurer la variable d'environnement.  
 Exemple: 
 ```bash
 MySQL_HOST=localhost
@@ -61,7 +61,8 @@ Assurez-vous que votre configuration utilise bien MySQL
 myproject/config/index.js => database = "mysql"
 ```
 
-Utilisez la variable global **db** pour créer vos requêtes, celle-ci est disponible sans importation. Exemple:
+Utilisez la variable global **db** pour créer vos requêtes, celle-ci est disponible sans importation.  
+Exemple:
 ```javascript
 db.query('SELECT * FROM users WHERE id = 1', function(err, results, fields) {
         
@@ -124,7 +125,7 @@ Le projet intègre déjà les fonctionnalités de base de JWT.
  - Vérification
  - Protection des routes 
 
-Pour utiliser ceux pour la création et la vérification importez le module situé dans **myproject/services/jwt.js**. 
+Pour utiliser ceux pour la création et la vérification importez le module situé dans **myproject/services/jwt.js**.  
 Exemple :
 ```javascript
 import ServiceJWT from  '../../../services/jwt';
@@ -146,8 +147,8 @@ if(check_token) {
 }
 ```
 
-Pour protéger une route avec JWT, importez le module **myproject/middleware/jwt.js** dans le **Controller** souhaitez, exemple **myproject/routes/controllers/testController.js**
-Pour envoyer le **Token**, utilisez le **Header** **Authorization** (req.headers.authorization)
+Pour protéger une route avec JWT, importez le module **myproject/middleware/jwt.js** dans le **Controller** souhaitez, exemple **myproject/routes/controllers/testController.js**  
+Pour envoyer le **Token**, utilisez le **Header** **Authorization** (req.headers.authorization)  
 Exemple : 
 
 ```javascript
