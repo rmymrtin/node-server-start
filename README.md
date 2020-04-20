@@ -47,6 +47,11 @@ Mode Développement
 npm run dev
 ```
 
+Mode Production
+```bash
+npm start
+```
+
 ## Usage avec MySQL
 
 Il faut d'abord configurer la variable d'environnement.  
@@ -149,7 +154,7 @@ if(check_token) {
 }
 ```
 
-Pour protéger une route avec JWT, importez le module **myproject/middleware/jwt.js** dans le **Controller** souhaitez, exemple **myproject/routes/controllers/testController.js**  
+Pour protéger une route avec JWT, importez le module **myproject/middleware/jwt.js** dans le **Controller** souhaité, exemple **myproject/routes/controllers/testController.js**  
 Pour envoyer le **Token**, utilisez le **Header** **Authorization** (req.headers.authorization)  
 Exemple : 
 
